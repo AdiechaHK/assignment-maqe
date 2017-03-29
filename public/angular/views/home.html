@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>MAQE Forums</h1>
+  <h2>Sub title</h2>
+  <h3>Posts</h3>
+  
+  <div class="row" data-ng-repeat="post in vm.posts">
+    <div class="col-md-12 post-item"  data-ng-class="{'odd': $index % 2, 'even': !($index%2)}">
+      <div class="author-container">
+        <!-- {{post.author_id}} -->
+
+        <img data-ng-src="{{vm.authors[post.author_id].avatar_url}}" alt="{{vm.authors[post.author_id].name}}">
+
+        <div class="author-name">{{vm.authors[post.author_id].name}}</div>
+        <div class="author-role">{{vm.authors[post.author_id].role}}</div>
+        <div class="author-place"><i class="fa fa-map-marker"></i> {{vm.authors[post.author_id].place}}</div>
+
+      </div>
+      <div class="image-container">
+        <img data-ng-src="{{post.image_url}}" alt="{{post.title}}">
+      </div>
+      <div class="post-data">
+        <h4>{{post.title}}</h4>
+        <p>{{post.body}}</p>
+        <div><i class="fa fa-clock-o"></i> {{post.created_at|dateAgo}}</div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
